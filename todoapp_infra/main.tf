@@ -80,26 +80,26 @@ module "frontend_vm" {
 
 }
 
-# module "backend_vm" {
+module "backend_vm" {
 
-#   depends_on           = [module.backend_public_ip, module.backend_subnet]
-#   source               = "../modules/azurerm_virtual_machine"
-#   resource_group_name  = "rg-todoapp"
-#   location             = "centralindia"
-#   vm_name              = "vm-backend"
-#   vm_size              = "Standard_B1s"
-#   admin_username       = "admin12
-#   admin_password       = "Admin@12345"
-#   image_publisher      = "Canonical"
-#   image_offer          = "0001-com-ubuntu-server-focal"
-#   image_sku            = "20_04-lts"
-#   image_version        = "latest"
-#   nic_name             = "nic-vm-backend"
-#   virtual_network_name = "vnet-todoapp"
-#   subnet_name          = "backend-subnet"
-#   public_ip            = "pip-backend"
+  depends_on           = [module.backend_public_ip, module.backend_subnet]
+  source               = "../modules/azurerm_virtual_machine"
+  resource_group_name  = "rg-todoapp"
+  location             = "centralindia"
+  vm_name              = "vm-backend"
+  vm_size              = "Standard_B1s"
+  admin_username       = "admin12
+  admin_password       = "Admin@12345"
+  image_publisher      = "Canonical"
+  image_offer          = "0001-com-ubuntu-server-focal"
+  image_sku            = "20_04-lts"
+  image_version        = "latest"
+  nic_name             = "nic-vm-backend"
+  virtual_network_name = "vnet-todoapp"
+  subnet_name          = "backend-subnet"
+  public_ip            = "pip-backend"
 
-# }
+}
 
 module "sql_server" {
   source                       = "../modules/azurerm_sql_server"
