@@ -101,13 +101,13 @@ module "frontend_vm" {
 
 # }
 
-# module "sql_server" {
-#   source                       = "../modules/azurerm_sql_server"
-#   sql_server_name              = "todosqlserver7865"
-#   resource_group_name          = "rg-todoapp"
-#   location                     = "centralindia"
-#   administrator_login          = "sqladmin"
-#   administrator_login_password = "Admin@1234"
+module "sql_server" {
+  source                       = "../modules/azurerm_sql_server"
+  sql_server_name              = "todosqlserver7865"
+  resource_group_name          = "rg-todoapp"
+  location                     = "centralindia"
+  administrator_login          = "sqladmin"
+  administrator_login_password = "Admin@1234"
 
-# }
+}
 
