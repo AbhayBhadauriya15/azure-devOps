@@ -5,6 +5,11 @@ module "resource_group" {
 }
 module "resource_group" {
   source                  = "../modules/azurerm_resource_group"
+  resource_group_name     = "rg-todosumit"
+  resource_group_location = "east us"
+}
+module "resource_group" {
+  source                  = "../modules/azurerm_resource_group"
   resource_group_name     = "rg-todoapp-anuj"
   resource_group_location = "centrail india"
 }
