@@ -1,0 +1,16 @@
+name: "my infra"
+
+on: 
+  push:
+    branches:
+      - 'feature/**'
+      - 'main'
+      - 'hotfix'
+
+jobs:
+  infra:
+    name: my infra
+    runs-on: cassandra
+    steps: 
+    - name: my infra pipeline
+      run: echo infra pipeline
